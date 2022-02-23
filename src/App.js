@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import "./App.css";
 import styled from "styled-components";
 
@@ -17,7 +18,9 @@ export default function App() {
         <OrbitControls enableZoom={false} />
         <ambientLight intensity={0.5} />
         <directionalLight position={[-2, 5, 2]} intensity={1} />
-        <Box />
+        <Suspense fallback={null}>
+          <Box />
+        </Suspense>
       </Canvas>
     </Wrapper>
   );
