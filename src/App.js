@@ -9,6 +9,7 @@ import Box from './components/Box';
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Sphere from './components/AnimateSphere';
+import Iphone from './components/Iphone';
 
 export default function App() {
   return (
@@ -29,6 +30,14 @@ export default function App() {
         <directionalLight position={[-2, 5, 2]} intensity={1} />
         <Suspense fallback={null}>
           <Sphere />
+        </Suspense>
+      </Canvas>
+      <Canvas className="canvas">
+        <OrbitControls enableZoom={false} />
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[-2, 5, 2]} intensity={1} />
+        <Suspense fallback={null}>
+          <Iphone />
         </Suspense>
       </Canvas>
     </Wrapper>
